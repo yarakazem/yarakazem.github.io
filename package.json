@@ -3,12 +3,17 @@
   "private": true,
   "description": "Design portfolio, live at https://yarakazem.github.io",
   "scripts": {
+    "postinstall": "npm run vendor",
+    "vendor": "mkdir -p assets/vendor && cp node_modules/gsap/dist/gsap.min.js node_modules/gsap/dist/ScrollTrigger.min.js assets/vendor/",
     "dev": "tailwindcss -i src/input.css -o styles.css --watch",
-    "build": "tailwindcss -i src/input.css -o styles.css --minify",
+    "build": "npm run vendor && tailwindcss -i src/input.css -o styles.css --minify",
     "serve": "python3 -m http.server 8000"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
     "tailwindcss": "^4.3.3"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
   }
 }

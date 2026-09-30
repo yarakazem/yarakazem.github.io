@@ -1,5 +1,10 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// GSAP + ScrollTrigger are loaded from assets/vendor (copied from npm on build)
+if (window.gsap && window.ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 // Fade sections and cards in as they scroll into view
 const observer = new IntersectionObserver(
   (entries) => {

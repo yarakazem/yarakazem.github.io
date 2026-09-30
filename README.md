@@ -27,6 +27,14 @@ Use Tailwind utility classes directly in the HTML. The site's tokens are availab
 `bg-bg`, `bg-surface`, `text-text`, `text-muted`, `border-line`, `text-accent`, `font-serif`, `font-sans`, `rounded-card`.
 Change the token values in `src/input.css` (light and dark mode).
 
+## Animation
+
+[GSAP](https://gsap.com) and ScrollTrigger are installed from npm. `npm install` (and every build)
+copies their browser files into `assets/vendor/` (not committed), and each page loads them as
+`window.gsap` / `window.ScrollTrigger` before `script.js`. ScrollTrigger is registered in `script.js`.
+To add another plugin (e.g. SplitText), add its `.min.js` to the `vendor` script in `package.json`
+and a matching `<script>` tag.
+
 ## Local preview
 
 ```bash
