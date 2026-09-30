@@ -1,0 +1,14 @@
+{
+  "name": "yarakazem.github.io",
+  "private": true,
+  "description": "Design portfolio, live at https://yarakazem.github.io",
+  "scripts": {
+    "dev": "tailwindcss -i src/input.css -o styles.css --watch",
+    "build": "tailwindcss -i src/input.css -o styles.css --minify",
+    "serve": "python3 -m http.server 8000"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
