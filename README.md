@@ -29,11 +29,28 @@ Change the token values in `src/input.css` (light and dark mode).
 
 ## Animation
 
-[GSAP](https://gsap.com) and ScrollTrigger are installed from npm. `npm install` (and every build)
-copies their browser files into `assets/vendor/` (not committed), and each page loads them as
-`window.gsap` / `window.ScrollTrigger` before `script.js`. ScrollTrigger is registered in `script.js`.
-To add another plugin (e.g. SplitText), add its `.min.js` to the `vendor` script in `package.json`
-and a matching `<script>` tag.
+Installed from npm; `npm install` and every build copy the browser files into `assets/vendor/`
+(not committed), and each page loads them before `script.js`:
+
+- [GSAP](https://gsap.com) + ScrollTrigger as `window.gsap` / `window.ScrollTrigger` (registered in `script.js`).
+  To add a plugin (e.g. SplitText), add its `.min.js` to the `vendor` script in `package.json` and a `<script>` tag.
+- [Motion](https://motion.dev) as `window.Motion`, e.g. `Motion.animate(el, { opacity: [0, 1] })`.
+
+Use one library per element: GSAP for scroll-driven sequences, Motion for small UI interactions.
+
+### Tuning with DialKit (development only)
+
+[DialKit](https://github.com/joshpuckett/dialkit) adds a live control panel for tuning values.
+It loads only on `localhost` or when the URL has `?dial`, so visitors never see it:
+
+```js
+dialkit.then((DialKit) => {
+  const kit = DialKit.createDialKit("Hero", { size: [64, 32, 96] });
+  kit.subscribe((v) => (document.querySelector("h1").style.fontSize = v.size + "px"));
+});
+```
+
+Once a value feels right, copy it into the real code and remove the tuning snippet.
 
 ## Local preview
 
