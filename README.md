@@ -16,8 +16,8 @@ assets/img/           Images for thumbnails and case studies
 
 ## Adding a case study
 
-1. Copy `work/case-study-1.html` to `work/<project-name>.html` and fill it in.
-2. Add a card for it in the `#work` grid in `index.html`.
+1. Copy `work/_template.html` to `work/<project-name>.html` and fill it in.
+2. Turn its `<article class="card">` into an `<a class="card" href="work/<project-name>.html">` in the `#work` grid in `index.html`.
 3. Put images in `assets/img/` and swap the placeholder `.thumb` gradient for an `<img>`.
 
 ## Local preview
