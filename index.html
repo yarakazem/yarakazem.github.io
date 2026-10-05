@@ -2,221 +2,248 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yara Kazem — Senior UX Designer</title>
-  <meta name="description" content="Yara Kazem is a Senior UX Designer in Berlin working on enterprise, AI-driven, and developer-focused products.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Yara Kazem, Senior UX Designer</title>
+  <meta name="description" content="Yara Kazem is a Senior UX Designer in Berlin designing AI and developer tools people can trust. Currently at SAP.">
+  <meta name="theme-color" content="#f1f2f4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121317" media="(prefers-color-scheme: dark)">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <script>
+    // Apply a saved theme before first paint so the page never flashes the wrong colours
+    try { const t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
+  </script>
 </head>
 <body>
-  <header class="site-header">
-    <a href="#top" class="logo">YK</a>
-    <nav>
-      <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-20 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-board">Skip to content</a>
+
+  <!-- FigJam-style floating UI: file name on the left, collaborators and Share on the right -->
+  <header>
+    <a href="#top" class="fj-panel fj-panel-left no-underline text-ink" aria-label="Yara Kazem, back to top">
+      <span class="fj-logo" aria-hidden="true">YK</span>
+      <span class="font-semibold">Yara Kazem</span>
+      <span class="fj-hide-sm text-muted">/ Portfolio</span>
+    </a>
+    <nav class="fj-panel fj-panel-right" aria-label="Main">
+      <span class="avatars fj-hide-sm" aria-hidden="true"><span class="avatar avatar-yara">Y</span><span class="avatar avatar-ai">AI</span></span>
+      <a class="nav-link fj-hide-sm text-[14px]" href="#work">Work</a>
+      <a class="nav-link fj-hide-sm text-[14px]" href="#about">About</a>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+        <svg class="icon-moon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg>
+      </button>
+      <a class="fj-share" href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <p class="eyebrow">Senior UX Designer · Berlin</p>
-      <h1>I design enterprise, AI&#8209;driven and developer tools that people <em>trust</em>.</h1>
-      <p class="lede">
-        6+ years across B2B SaaS, recruitment tech, ed-tech and Web3. Currently at SAP,
-        designing developer tooling and AI experiences for the BTP Cockpit.
-      </p>
-      <a class="button" href="#work">See selected work ↓</a>
-    </section>
+  <main id="main" class="mx-auto grid max-w-[1320px] gap-7 px-3 pb-32 pt-[76px] md:px-5">
 
-    <section id="work" class="work">
-      <h2 class="section-title">Selected work</h2>
-      <div class="grid">
-        <!-- Cards become links once a case study page exists in /work (see work/_template.html) -->
-        <article class="card">
-          <div class="thumb" style="--hue: 210"></div>
-          <div class="card-body">
-            <p class="meta">SAP · Developer tooling · 2026</p>
-            <h3>BTP Cockpit</h3>
-            <p>End-to-end UX research and design for the CLI and Terraform integration in SAP's central cloud management console.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb" style="--hue: 140"></div>
-          <div class="card-body">
-            <p class="meta">SAP · Sustainability &amp; AI · 2024–25</p>
-            <h3>Our Initiatives</h3>
-            <p>Delivered the MVP for an enterprise sustainability app, aligning UX research with SAP's sustainability strategy and AI features.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb" style="--hue: 18"></div>
-          <div class="card-body">
-            <p class="meta">Nodogoro · AI recruitment · 2023–24</p>
-            <h3>Hire Inc</h3>
-            <p>An AI-driven recruitment toolkit combining ATS and CRM, including an AI sourcing agent MVP for candidate discovery.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb" style="--hue: 280"></div>
-          <div class="card-body">
-            <p class="meta">Nodogoro · Creator platform · 2023–24</p>
-            <h3>Studioshot</h3>
-            <p>Complete UI/UX for a creator-focused platform now serving 1M+ users.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb" style="--hue: 330"></div>
-          <div class="card-body">
-            <p class="meta">Funoon Arab · Web3 · 2022–23</p>
-            <h3>NFT Marketplace</h3>
-            <p>End-to-end UX with a user-centric onboarding flow and seamless wallet integration that supported rapid user growth.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb" style="--hue: 45"></div>
-          <div class="card-body">
-            <p class="meta">Nafham · Ed-tech · 2020–22</p>
-            <h3>Nafham Onboarding</h3>
-            <p>Sole designer on a revamped onboarding experience, driving a 40% increase in user engagement.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="experience" class="experience">
-      <h2 class="section-title">Experience</h2>
-      <ol class="timeline">
-        <li>
-          <p class="when">01/2026 – Present</p>
-          <div>
-            <h3>Senior UX Designer, SAP</h3>
-            <p class="where">Berlin, Germany</p>
-            <ul>
-              <li>Designing UX for BTP Cockpit, SAP's central cloud management console for developers and administrators.</li>
-              <li>Owned end-to-end UX research and design for the CLI and Terraform integration, now in active development.</li>
-              <li>Prototyped a new BTP Cockpit feature with AI tooling to validate concepts and communicate design intent.</li>
-              <li>Define interaction patterns, information architecture and design system contributions with UX, PM and engineering.</li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <p class="when">06/2024 – 08/2025</p>
-          <div>
-            <h3>UX Designer, SAP</h3>
-            <p class="where">Berlin, Germany</p>
-            <ul>
-              <li>Designed and prototyped enterprise sustainability applications, integrating AI features across SAP's product ecosystem.</li>
-              <li>Translated research into high-fidelity prototypes and proofs of concept that influenced product roadmaps.</li>
-              <li>Delivered the MVP for the <em>Our Initiatives</em> app.</li>
-              <li>Designed in-app guidance with WalkMe to drive adoption across SAP's Sustainability Portfolio.</li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <p class="when">05/2023 – 06/2024</p>
-          <div>
-            <h3>Senior Product Designer, Nodogoro</h3>
-            <p class="where">San Francisco, USA (Remote)</p>
-            <ul>
-              <li>Led end-to-end design of Hire Inc, an enterprise AI-driven recruitment toolkit combining ATS and CRM.</li>
-              <li>Designed an AI sourcing/recruitment agent MVP to streamline candidate discovery.</li>
-              <li>Created the complete UI/UX for Studioshot, now serving 1M+ users.</li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <p class="when">08/2022 – 05/2023</p>
-          <div>
-            <h3>UX Designer, Funoon Arab</h3>
-            <p class="where">Dubai, UAE (Remote)</p>
-            <ul>
-              <li>Designed the end-to-end UX for an NFT marketplace, including onboarding and wallet integration.</li>
-              <li>Built a scalable UI framework for consistent design and faster feature rollout.</li>
-              <li>Ran usability testing that led to accessibility and engagement improvements.</li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <p class="when">03/2020 – 08/2022</p>
-          <div>
-            <h3>UI/UX Designer, Nafham by Tyro</h3>
-            <p class="where">Cairo, Egypt</p>
-            <ul>
-              <li>Sole designer on the ed-tech platform's onboarding revamp: +40% user engagement.</li>
-              <li>Improved content delivery flows: +30% daily student usage.</li>
-              <li>Established a cohesive design system and style guide across all touchpoints.</li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <p class="when">09/2019 – 02/2020</p>
-          <div>
-            <h3>UI/UX Designer (Internship), Paramount Student</h3>
-            <p class="where">Turkey (Remote)</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <section id="about" class="about">
-      <h2 class="section-title">About</h2>
-      <div class="about-grid">
+    <!-- Intro section: the live whiteboard demo -->
+    <section class="fj-section" data-tint="gray" id="top" aria-labelledby="hero-title">
+      <p class="fj-title" aria-hidden="true">Intro</p>
+      <div class="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-14">
         <div>
-          <p>
-            I'm a Senior UX Designer with 6+ years of experience in enterprise, AI-driven and
-            developer-focused products. I'm passionate about AI and how it can create smarter,
-            more intuitive user experiences, with a particular focus on user trust in AI interfaces.
+          <h1 id="hero-title" class="text-[clamp(2.4rem,5.4vw,4.3rem)] font-bold leading-[1.04] tracking-[-0.025em]">
+            I design AI and developer tools people can <span class="marker">trust.</span>
+          </h1>
+          <p class="mt-5 max-w-[36ch] text-lg text-muted md:text-xl">
+            Senior UX Designer with 6+ years in enterprise, AI and developer products. Currently designing SAP's BTP Cockpit in Berlin.
           </p>
-          <p>
-            I hold an MA in Innovation Design Management from the University of Europe for Applied
-            Sciences and a BA in Communication and Mass Media from London South Bank University.
-          </p>
-          <p class="languages">English · Arabic · German (A2)</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a class="btn btn-primary" href="#work">View work</a>
+          </div>
         </div>
-        <ul class="skills">
-          <li>User research</li>
-          <li>Usability testing</li>
-          <li>Interaction design</li>
-          <li>Wireframing &amp; prototyping</li>
-          <li>Enterprise UX</li>
-          <li>Developer tooling</li>
-          <li>CLI / terminal UX</li>
-          <li>AI-assisted design</li>
-          <li>Design systems</li>
-          <li>Accessibility</li>
-          <li>Information architecture</li>
-          <li>Figma &amp; FigJam</li>
-          <li>Framer</li>
-          <li>Webflow</li>
-          <li>HTML / CSS / JS</li>
-          <li>React</li>
-          <li>Claude Code</li>
-        </ul>
+
+        <div>
+          <div class="board" id="board" role="group" aria-label="Whiteboard demo: an AI suggests how to group sticky notes, Yara edits the suggestion and accepts it">
+            <div class="cluster-label" aria-hidden="true" data-cluster="a"><span class="c-text">Show why, allow undo</span><span class="tag tag-human">Yara</span></div>
+            <div class="cluster-label" aria-hidden="true" data-cluster="b"><span class="c-text">CLI and console parity</span><span class="tag tag-ai">AI</span></div>
+
+            <div class="note" aria-hidden="true" data-color="pink"   data-group="a" style="left:3%;top:4%;--r:-4deg">Why did the AI pick this candidate?</div>
+            <div class="note" aria-hidden="true" data-color="blue"   data-group="b" style="left:55%;top:8%;--r:3deg">The CLI should do what the console does</div>
+            <div class="note" aria-hidden="true" data-color="yellow" data-group="a" style="left:40%;top:38%;--r:2deg">Recruiters skip suggestions they can't check</div>
+            <div class="note" aria-hidden="true" data-color="blue"   data-group="b" style="left:2%;top:40%;--r:-3deg">Terraform plans are hard to review</div>
+            <div class="note" aria-hidden="true" data-color="pink"   data-group="a" style="left:56%;top:70%;--r:3deg">Can I undo what the agent changed?</div>
+            <div class="note" aria-hidden="true" data-color="yellow" data-group="b" style="left:10%;top:74%;--r:-2deg">Same setup, different steps in every tool</div>
+
+            <div class="suggestion" aria-hidden="true" id="suggestion">
+              <span class="s-text">Group as <span class="s-field" id="s-field">"AI mistakes"</span><span class="caret" id="caret"></span></span>
+              <span class="s-btn" id="s-edit">Edit</span>
+              <span class="s-btn" id="s-accept">Accept</span>
+            </div>
+
+            <div class="cursor cursor-ai" aria-hidden="true" id="cursor-ai">
+              <svg viewBox="0 0 256 256" fill="currentColor"><path d="M220.49,207.8,207.8,220.49a12,12,0,0,1-17,0l-56.57-56.57L115,214.08l-.13.33A15.84,15.84,0,0,1,100.26,224l-.78,0a15.82,15.82,0,0,1-14.41-11L32.8,52.92A15.95,15.95,0,0,1,52.92,32.8L213,85.07a16,16,0,0,1,1.41,29.8l-.33.13-50.16,19.27,56.57,56.56A12,12,0,0,1,220.49,207.8Z"/></svg>
+              <span class="who">AI</span>
+            </div>
+            <div class="cursor cursor-yara" aria-hidden="true" id="cursor-yara">
+              <svg viewBox="0 0 256 256" fill="currentColor"><path d="M220.49,207.8,207.8,220.49a12,12,0,0,1-17,0l-56.57-56.57L115,214.08l-.13.33A15.84,15.84,0,0,1,100.26,224l-.78,0a15.82,15.82,0,0,1-14.41-11L32.8,52.92A15.95,15.95,0,0,1,52.92,32.8L213,85.07a16,16,0,0,1,1.41,29.8l-.33.13-50.16,19.27,56.57,56.56A12,12,0,0,1,220.49,207.8Z"/></svg>
+              <span class="who">Yara</span>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center justify-end">
+            <button type="button" class="tool" id="tool-replay">
+              <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a96,96,0,0,1-94.71,96H128A95.38,95.38,0,0,1,62.1,197.8a8,8,0,0,1,11-11.63A80,80,0,1,0,71.43,71.39a3.07,3.07,0,0,1-.26.25L44.59,96H72a8,8,0,0,1,0,16H24a8,8,0,0,1-8-8V56a8,8,0,0,1,16,0V85.8L60.25,60A96,96,0,0,1,224,128Z"/></svg>
+              Replay
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <h2 class="section-title">Let's talk</h2>
-      <p class="lede">Based in Berlin. Happy to chat about roles, projects, or designing for AI.</p>
-      <div class="links">
-        <a href="mailto:yarakazem@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/yarakazem" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/yarakazem" target="_blank" rel="noopener">GitHub</a>
+    <!-- Work section: Figma-style frames with a summary sticky on each -->
+    <section class="fj-section" data-tint="blue" id="work" aria-labelledby="work-title">
+      <h2 class="fj-title" id="work-title">Selected work</h2>
+
+      <!-- Projects become links (<a class="project" href="work/...">) once each case study page exists -->
+      <article class="project grid items-start gap-6 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)] lg:gap-0">
+        <div>
+          <span class="frame-name">Hire Inc / AI recruiting agent</span>
+          <div class="shot aspect-[16/10]">
+            <div class="comment" style="left:24px;top:24px"><span class="comment-pin">Y</span><span class="comment-bubble"><b>Yara</b>Screens from Figma go here next.</span></div>
+          </div>
+        </div>
+        <div class="pnote lg:-ml-10 lg:mt-24" data-color="yellow" style="--r:-2deg">
+          <p class="meta">Nodogoro, 2023-2024</p>
+          <h3 class="mt-2 text-[clamp(1.35rem,2.2vw,1.75rem)] font-bold leading-tight">Designing an AI recruiting agent for enterprise hiring teams</h3>
+          <p class="body mt-3">Led end-to-end design of Hire Inc, an AI-driven ATS and CRM, including an AI sourcing agent MVP.</p>
+          <p class="meta mt-4">Lead product designer</p>
+        </div>
+      </article>
+
+      <div class="mt-16 grid gap-14 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:gap-10">
+        <article class="project">
+          <span class="frame-name">BTP Cockpit / CLI and Terraform</span>
+          <div class="shot aspect-[4/3]">
+            <div class="comment" style="left:20px;top:20px"><span class="comment-pin">Y</span><span class="comment-bubble"><b>Yara</b>NDA-safe rebuild of the screens coming.</span></div>
+          </div>
+          <div class="pnote -mt-10 ml-auto w-[88%]" data-color="blue" style="--r:1.5deg">
+            <p class="meta">SAP, 2026</p>
+            <h3 class="mt-2 text-xl font-bold leading-tight md:text-2xl">Bringing CLI and Terraform workflows into SAP's cloud console</h3>
+            <p class="body mt-2">Owned research and design for the integration, now in development.</p>
+          </div>
+        </article>
+        <article class="project md:mt-20">
+          <span class="frame-name">Nafham / Onboarding</span>
+          <div class="shot aspect-[4/5]">
+            <div class="comment" style="left:20px;top:20px"><span class="comment-pin">Y</span><span class="comment-bubble"><b>Yara</b>Screens coming.</span></div>
+          </div>
+          <div class="pnote -mt-10 mr-auto w-[88%]" data-color="green" style="--r:-1.5deg">
+            <p class="meta">Nafham by Tyro, 2020-2022</p>
+            <h3 class="mt-2 text-xl font-bold leading-tight md:text-2xl">Revamping ed-tech onboarding: 40% more engagement</h3>
+            <p class="body mt-2">Sole designer. The new content flows also lifted daily usage by 30%.</p>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="mt-20 text-lg font-bold">More work</h3>
+      <div class="mt-5 grid gap-5 sm:grid-cols-3">
+        <div class="pnote" data-color="pink" style="--r:-1deg"><p class="font-semibold">Studioshot</p><p class="body mt-1 text-sm">Complete UI/UX for a creator platform now serving 1M+ users.</p></div>
+        <div class="pnote" data-color="green" style="--r:1.2deg"><p class="font-semibold">Our Initiatives, SAP</p><p class="body mt-1 text-sm">MVP for an enterprise sustainability app with AI features.</p></div>
+        <div class="pnote" data-color="yellow" style="--r:-0.8deg"><p class="font-semibold">NFT marketplace, Funoon Arab</p><p class="body mt-1 text-sm">Onboarding and wallet flows that supported rapid growth.</p></div>
       </div>
     </section>
+
+    <!-- Point of view as four stickies. Draft principles for Yara to edit. -->
+    <section class="fj-section" data-tint="yellow" id="trust" aria-labelledby="trust-title">
+      <h2 class="fj-title" id="trust-title">How I design AI people can trust</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="pnote principle-note min-h-[190px]" data-color="yellow" style="--r:-2deg"><h3 class="text-xl font-bold">Show why</h3><p class="body mt-2">Every AI decision comes with the reason behind it, in words the user already uses.</p></div>
+        <div class="pnote principle-note min-h-[190px]" data-color="pink" style="--r:1.5deg"><h3 class="text-xl font-bold">Keep people in charge</h3><p class="body mt-2">The AI suggests. People decide, and the interface makes that line obvious.</p></div>
+        <div class="pnote principle-note min-h-[190px]" data-color="blue" style="--r:-1deg"><h3 class="text-xl font-bold">Make undo cheap</h3><p class="body mt-2">If an agent can change something, reversing it takes one step.</p></div>
+        <div class="pnote principle-note min-h-[190px]" data-color="green" style="--r:2deg"><h3 class="text-xl font-bold">Be honest about limits</h3><p class="body mt-2">Label what the AI made, and say when it isn't sure.</p></div>
+      </div>
+    </section>
+
+    <section class="fj-section" data-tint="green" id="about" aria-labelledby="about-title">
+      <h2 class="fj-title" id="about-title">About</h2>
+      <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-16">
+        <div>
+          <figure class="photo mb-10 w-[min(240px,70%)]" style="--r:-2.5deg">
+            <img src="assets/img/yara.jpg" width="640" height="800" alt="Portrait of Yara Kazem" loading="lazy" decoding="async">
+            <figcaption>Yara Kazem</figcaption>
+          </figure>
+          <p class="text-[clamp(1.25rem,2vw,1.5rem)] font-medium leading-snug">I'm a Senior UX Designer at SAP, working on developer tooling and AI for BTP Cockpit. Before that I designed AI recruiting tools, a creator platform used by over a million people, and ed-tech products.</p>
+          <p class="mt-5 text-muted">MA in Innovation Design Management, University of Europe for Applied Sciences. BA in Communication and Mass Media, London South Bank University. I speak English, Arabic and some German.</p>
+
+          <div class="pnote mt-10 max-w-[440px]" data-color="blue" style="--r:-1deg">
+            <h3 class="text-lg font-bold">How I work with AI</h3>
+            <p class="body mt-2">I prototype with AI tools to test ideas early and show stakeholders what I mean. I designed and built this site with Claude Code.</p>
+            <ul class="mt-4 flex flex-wrap gap-2" aria-label="Tools">
+              <li class="tool-chip">Figma</li>
+              <li class="tool-chip">Claude Code</li>
+              <li class="tool-chip">Claude Design</li>
+              <li class="tool-chip">Cursor</li>
+              <li class="tool-chip">Framer</li>
+              <li class="tool-chip">React</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <span class="frame-name">Experience</span>
+          <div class="fj-table">
+            <div class="role-row"><span class="meta">2026 - now</span><span class="font-medium">Senior UX Designer</span><span class="text-muted">SAP</span></div>
+            <div class="role-row"><span class="meta">2024 - 2025</span><span class="font-medium">UX Designer</span><span class="text-muted">SAP</span></div>
+            <div class="role-row"><span class="meta">2023 - 2024</span><span class="font-medium">Senior Product Designer</span><span class="text-muted">Nodogoro</span></div>
+            <div class="role-row"><span class="meta">2022 - 2023</span><span class="font-medium">UX Designer</span><span class="text-muted">Funoon Arab</span></div>
+            <div class="role-row"><span class="meta">2020 - 2022</span><span class="font-medium">UI/UX Designer</span><span class="text-muted">Nafham by Tyro</span></div>
+            <div class="role-row"><span class="meta">2019 - 2020</span><span class="font-medium">UI/UX Designer, intern</span><span class="text-muted">Paramount Student</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fj-section" data-tint="violet" id="contact" aria-labelledby="contact-title">
+      <h2 class="fj-title" id="contact-title">Contact</h2>
+      <div class="pnote max-w-[640px]" data-color="pink" style="--r:-1deg">
+        <p class="text-[clamp(1.5rem,3vw,2.2rem)] font-bold leading-tight" style="font-family: var(--display)">Open to senior product design roles in AI and developer tools, in Berlin or remote.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-2">
+          <a href="mailto:yarakazem@gmail.com" class="text-lg font-semibold text-[var(--sticky-ink)]">yarakazem@gmail.com</a>
+          <button type="button" class="tool" id="copy-email" aria-label="Copy email address">
+            <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></svg>
+            <span id="copy-label">Copy</span>
+          </button>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/yarakazem" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-secondary" href="https://github.com/yarakazem" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <footer class="flex flex-wrap justify-between gap-4 px-2 text-sm text-muted">
+      <p>&copy; <span id="year">2026</span> Yara Kazem</p>
+      <p>Designed and built with Claude Code, Tailwind and GSAP.</p>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Yara Kazem</p>
-  </footer>
+  <!-- FigJam-style toolbar: add a sticky or stamp anywhere on the board -->
+  <div class="fj-toolbar" role="toolbar" aria-label="Board tools">
+    <button type="button" class="fj-tool" id="tool-sticky">
+      <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H156.69A15.86,15.86,0,0,0,168,219.31L219.31,168A15.86,15.86,0,0,0,224,156.69V48A16,16,0,0,0,208,32ZM48,48H208V152H160a8,8,0,0,0-8,8v48H48ZM196.69,168,168,196.69V168Z"/></svg>
+      <span class="label">Add a sticky</span>
+    </button>
+    <button type="button" class="fj-tool" id="tool-stamp" aria-pressed="false">
+      <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32Z"/></svg>
+      <span class="label">Stamp</span>
+    </button>
+    <span class="fj-sep" aria-hidden="true"></span>
+    <a class="fj-tool" href="#work">Work</a>
+    <a class="fj-tool" href="#trust">Principles</a>
+  </div>
+
+  <template id="stamp-icons">
+    <svg viewBox="0 0 256 256" fill="currentColor"><path d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32Z"/></svg>
+    <svg viewBox="0 0 256 256" fill="currentColor"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"/></svg>
+    <svg viewBox="0 0 256 256" fill="currentColor"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+  </template>
 
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="assets/vendor/ScrollTrigger.min.js"></script>
   <script src="assets/vendor/motion.js"></script>
   <script src="script.js"></script>
+  <script src="hero.js"></script>
 </body>
 </html>

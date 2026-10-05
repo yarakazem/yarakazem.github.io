@@ -3,28 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Case study — Yara Kazem</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Case study, Yara Kazem</title>
   <link rel="stylesheet" href="../styles.css">
+  <script>
+    // Apply a saved theme before first paint so the page never flashes the wrong colours
+    try { const t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
+  </script>
 </head>
 <body>
-  <header class="site-header">
-    <a href="../index.html" class="logo">YK</a>
-    <nav>
-      <a href="../index.html#work">Work</a>
-      <a href="../index.html#experience">Experience</a>
-      <a href="../index.html#about">About</a>
-      <a href="../index.html#contact">Contact</a>
+  <header class="site-header" id="site-header">
+    <nav class="wrap flex h-16 items-center justify-between gap-6" aria-label="Main">
+      <a href="../index.html" class="font-display text-lg font-bold tracking-tight text-ink no-underline">Yara Kazem</a>
+      <div class="flex items-center gap-5 text-[15px] sm:gap-7">
+        <a class="nav-link" href="../index.html#work">Work</a>
+        <a class="nav-link" href="../index.html#about">About</a>
+        <a class="nav-link" href="../index.html#contact">Contact</a>
+      </div>
     </nav>
   </header>
 
-  <main>
+  <main class="wrap">
     <article class="case">
       <a class="back" href="../index.html#work">← All work</a>
-      <p class="eyebrow">Case study</p>
-      <h1>Project name</h1>
+            <h1>Project name</h1>
       <p class="lede">One-line summary of the outcome.</p>
 
       <dl class="case-facts">
@@ -35,7 +36,7 @@
       </dl>
 
       <!-- Replace with: <img class="hero-img" src="../assets/img/project-one.jpg" alt="..."> -->
-      <div class="hero-img thumb" style="--hue: 18"></div>
+      <div class="shot hero-img"><p class="shot-todo">Hero image</p></div>
 
       <h2>The problem</h2>
       <p>What was broken, for whom, and how you knew. Include a key metric or quote from research.</p>
@@ -54,7 +55,7 @@
     </article>
   </main>
 
-  <footer class="site-footer">
+  <footer class="wrap py-8 text-sm text-muted">
     <p>© <span id="year"></span> Yara Kazem</p>
   </footer>
   <script src="../assets/vendor/gsap.min.js"></script>

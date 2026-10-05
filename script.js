@@ -31,7 +31,17 @@ window.dialkit = dialkitEnabled
     })
   : new Promise(() => {}); // never resolves in production, so dev-only tuning code stays inert
 
-// Fade sections and cards in as they scroll into view
+// Header gets a hairline once the page scrolls past the top
+const header = document.getElementById("site-header");
+const heroTop = document.getElementById("top");
+if (header && heroTop) {
+  new IntersectionObserver(([entry]) => {
+    header.classList.toggle("is-scrolled", entry.boundingClientRect.top < 0);
+  }, { threshold: [0, 1] }).observe(heroTop);
+}
+
+// Projects and principles rise in as they enter the viewport. Only elements that
+// start below the fold opt in, so nothing on the first screen is ever hidden.
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -41,10 +51,48 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.12 }
+  { threshold: 0.15 }
 );
 
-document.querySelectorAll("section:not(.hero), .card").forEach((el) => {
+document.querySelectorAll(".project, .principle-note").forEach((el, i) => {
+  if (el.getBoundingClientRect().top < window.innerHeight) return;
   el.classList.add("reveal");
+  if (el.classList.contains("principle-note")) el.style.transitionDelay = `${(i % 4) * 60}ms`;
   observer.observe(el);
 });
+
+// Copy email
+const copyBtn = document.getElementById("copy-email");
+if (copyBtn) {
+  const label = document.getElementById("copy-label");
+  copyBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText("yarakazem@gmail.com");
+      label.textContent = "Copied";
+    } catch {
+      label.textContent = "Select the address to copy";
+    }
+    setTimeout(() => (label.textContent = "Copy"), 2000);
+  });
+}
+
+// Light / dark toggle. Follows the system until the visitor chooses; the choice is remembered.
+const themeBtn = document.getElementById("theme-toggle");
+if (themeBtn) {
+  const root = document.documentElement;
+  const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const current = () => root.dataset.theme || (systemDark.matches ? "dark" : "light");
+  const sync = () => {
+    const next = current() === "dark" ? "light" : "dark";
+    themeBtn.setAttribute("aria-label", `Switch to ${next} mode`);
+    const board = getComputedStyle(root).getPropertyValue("--board").trim();
+    document.querySelectorAll('meta[name="theme-color"]').forEach((m) => m.setAttribute("content", board));
+  };
+  themeBtn.addEventListener("click", () => {
+    root.dataset.theme = current() === "dark" ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch {}
+    sync();
+  });
+  systemDark.addEventListener("change", sync);
+  sync();
+}

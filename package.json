@@ -4,16 +4,20 @@
   "description": "Design portfolio, live at https://yarakazem.github.io",
   "scripts": {
     "postinstall": "npm run vendor",
-    "vendor": "mkdir -p assets/vendor/dialkit && cp node_modules/gsap/dist/gsap.min.js node_modules/gsap/dist/ScrollTrigger.min.js node_modules/motion/dist/motion.js assets/vendor/ && cp node_modules/dialkit/dist/vanilla/browser.global.js node_modules/dialkit/dist/vanilla/styles.css assets/vendor/dialkit/",
+    "vendor": "mkdir -p assets/vendor/dialkit && cp node_modules/gsap/dist/gsap.min.js node_modules/gsap/dist/ScrollTrigger.min.js node_modules/motion/dist/motion.js assets/vendor/ && cp node_modules/dialkit/dist/vanilla/browser.global.js node_modules/dialkit/dist/vanilla/styles.css assets/vendor/dialkit/ && mkdir -p assets/fonts && cp node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2 node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2 node_modules/@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2 assets/fonts/",
     "dev": "tailwindcss -i src/input.css -o styles.css --watch",
     "build": "npm run vendor && tailwindcss -i src/input.css -o styles.css --minify",
     "serve": "python3 -m http.server 8000"
   },
   "devDependencies": {
+    "@phosphor-icons/core": "^2.1.1",
     "@tailwindcss/cli": "^4.3.3",
     "tailwindcss": "^4.3.3"
   },
   "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
     "dialkit": "^2.0.2",
     "gsap": "^3.15.0",
     "motion": "^13.4.6"
