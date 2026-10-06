@@ -1,4 +1,5 @@
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // GSAP + ScrollTrigger and Motion (window.Motion) are loaded from assets/vendor
 // (copied from npm on build)
@@ -95,4 +96,18 @@ if (themeBtn) {
   });
   systemDark.addEventListener("change", sync);
   sync();
+}
+
+// FigJam-style entrance: the floating panels glide in from their own edges, once per page load
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  [
+    [".fj-panel-left", "translateY(-14px)", "none"],
+    [".fj-panel-right", "translateY(-14px)", "none"],
+    [".fj-toolbar", "translateX(-50%) translateY(28px)", "translateX(-50%)"],
+  ].forEach(([sel, from, to], i) => {
+    document.querySelector(sel)?.animate(
+      [{ opacity: 0, transform: from }, { opacity: 1, transform: to }],
+      { duration: 560, delay: 80 + i * 70, easing: "cubic-bezier(0.23, 1, 0.32, 1)", fill: "backwards" }
+    );
+  });
 }

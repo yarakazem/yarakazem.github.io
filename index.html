@@ -26,10 +26,10 @@
       <span class="fj-hide-sm text-muted">/ Portfolio</span>
     </a>
     <nav class="fj-panel fj-panel-right" aria-label="Main">
-      <span class="avatars fj-hide-sm" aria-hidden="true"><span class="avatar avatar-yara">Y</span><span class="avatar avatar-ai">AI</span></span>
+      <span class="avatars fj-hide-sm" aria-hidden="true"><span class="avatar avatar-yara tip-below" data-tip="Yara is here">Y</span><span class="avatar avatar-ai tip-below" data-tip="AI assistant">AI</span></span>
       <a class="nav-link fj-hide-sm text-[14px]" href="#work">Work</a>
       <a class="nav-link fj-hide-sm text-[14px]" href="#about">About</a>
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+      <button type="button" class="theme-toggle tip-below" id="theme-toggle" aria-label="Switch to dark mode" data-tip="Light or dark">
         <svg class="icon-moon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></svg>
         <svg class="icon-sun" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg>
       </button>
@@ -37,7 +37,7 @@
     </nav>
   </header>
 
-  <main id="main" class="mx-auto grid max-w-[1320px] gap-7 px-3 pb-32 pt-[76px] md:px-5">
+  <main id="main" class="mx-auto grid max-w-[1320px] grid-cols-[minmax(0,1fr)] gap-7 px-3 pb-32 pt-[76px] md:px-5">
 
     <!-- Intro section: the live whiteboard demo -->
     <section class="fj-section" data-tint="gray" id="top" aria-labelledby="hero-title">
@@ -97,62 +97,64 @@
       <h2 class="fj-title" id="work-title">Selected work</h2>
 
       <!-- Projects become links (<a class="project" href="work/...">) once each case study page exists -->
-      <article class="project grid items-start gap-6 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)] lg:gap-0">
+      <a class="project grid items-start gap-6 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)] lg:gap-0" href="work/glyptik.html">
         <div>
-          <span class="frame-name">Hire Inc / AI recruiting agent</span>
-          <div class="shot aspect-[16/10]">
-            <div class="comment" style="left:24px;top:24px"><span class="comment-pin">Y</span><span class="comment-bubble"><b>Yara</b>Screens from Figma go here next.</span></div>
-          </div>
+          <span class="frame-name">Glyptik / AI meeting summaries</span>
+          <span class="shot block"><img src="assets/img/glyptik/summary-plan.png" width="2200" height="1570" alt="Coded Glyptik meeting summary where every key point carries a named source chip and tasks show owners and due dates." class="block h-auto w-full" loading="lazy"></span>
         </div>
         <div class="pnote lg:-ml-10 lg:mt-24" data-color="yellow" style="--r:-2deg">
-          <p class="meta">Nodogoro, 2023-2024</p>
-          <h3 class="mt-2 text-[clamp(1.35rem,2.2vw,1.75rem)] font-bold leading-tight">Designing an AI recruiting agent for enterprise hiring teams</h3>
-          <p class="body mt-3">Led end-to-end design of Hire Inc, an AI-driven ATS and CRM, including an AI sourcing agent MVP.</p>
-          <p class="meta mt-4">Lead product designer</p>
+          <p class="meta">Master's thesis research, 2024-2025</p>
+          <h3 class="mt-2 text-[clamp(1.35rem,2.2vw,1.75rem)] font-bold leading-tight">What makes people trust an AI meeting summary?</h3>
+          <p class="body mt-3">I tested three designs of the same AI recap with 15 professionals. 10 chose the one that shows its sources.</p>
+          <p class="mt-5 inline-flex items-center gap-2 font-semibold">Read the case study
+            <svg class="h-4 w-4" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+          </p>
         </div>
-      </article>
+      </a>
 
       <div class="mt-16 grid gap-14 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:gap-10">
         <article class="project">
-          <span class="frame-name">BTP Cockpit / CLI and Terraform</span>
+          <span class="frame-name">Hire Inc / AI recruiting agent</span>
           <div class="shot aspect-[4/3]">
+            <div class="comment" style="left:20px;top:20px"><span class="comment-pin">Y</span><span class="comment-bubble"><b>Yara</b>Screens from Figma go here next.</span></div>
+          </div>
+          <div class="pnote -mt-10 ml-auto w-[88%]" data-color="pink" style="--r:1.5deg">
+            <p class="meta">Nodogoro, 2023-2024</p>
+            <h3 class="mt-2 text-xl font-bold leading-tight md:text-2xl">Designing an AI recruiting agent for enterprise hiring teams</h3>
+            <p class="body mt-2">Led end-to-end design of Hire Inc, an AI-driven ATS and CRM, including an AI sourcing agent MVP.</p>
+          </div>
+        </article>
+        <article class="project md:mt-20">
+          <span class="frame-name">BTP Cockpit / CLI and Terraform</span>
+          <div class="shot aspect-[4/5]">
             <div class="comment" style="left:20px;top:20px"><span class="comment-pin">Y</span><span class="comment-bubble"><b>Yara</b>NDA-safe rebuild of the screens coming.</span></div>
           </div>
-          <div class="pnote -mt-10 ml-auto w-[88%]" data-color="blue" style="--r:1.5deg">
+          <div class="pnote -mt-10 mr-auto w-[88%]" data-color="blue" style="--r:-1.5deg">
             <p class="meta">SAP, 2026</p>
             <h3 class="mt-2 text-xl font-bold leading-tight md:text-2xl">Bringing CLI and Terraform workflows into SAP's cloud console</h3>
             <p class="body mt-2">Owned research and design for the integration, now in development.</p>
           </div>
         </article>
-        <article class="project md:mt-20">
-          <span class="frame-name">Nafham / Onboarding</span>
-          <div class="shot aspect-[4/5]">
-            <div class="comment" style="left:20px;top:20px"><span class="comment-pin">Y</span><span class="comment-bubble"><b>Yara</b>Screens coming.</span></div>
-          </div>
-          <div class="pnote -mt-10 mr-auto w-[88%]" data-color="green" style="--r:-1.5deg">
-            <p class="meta">Nafham by Tyro, 2020-2022</p>
-            <h3 class="mt-2 text-xl font-bold leading-tight md:text-2xl">Revamping ed-tech onboarding: 40% more engagement</h3>
-            <p class="body mt-2">Sole designer. The new content flows also lifted daily usage by 30%.</p>
-          </div>
-        </article>
       </div>
 
       <h3 class="mt-20 text-lg font-bold">More work</h3>
-      <div class="mt-5 grid gap-5 sm:grid-cols-3">
-        <div class="pnote" data-color="pink" style="--r:-1deg"><p class="font-semibold">Studioshot</p><p class="body mt-1 text-sm">Complete UI/UX for a creator platform now serving 1M+ users.</p></div>
-        <div class="pnote" data-color="green" style="--r:1.2deg"><p class="font-semibold">Our Initiatives, SAP</p><p class="body mt-1 text-sm">MVP for an enterprise sustainability app with AI features.</p></div>
-        <div class="pnote" data-color="yellow" style="--r:-0.8deg"><p class="font-semibold">NFT marketplace, Funoon Arab</p><p class="body mt-1 text-sm">Onboarding and wallet flows that supported rapid growth.</p></div>
+      <div class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="pnote" data-color="green" style="--r:-1deg"><p class="font-semibold">Nafham onboarding</p><p class="body mt-1 text-sm">Sole designer on an ed-tech onboarding revamp: +40% engagement, +30% daily usage.</p></div>
+        <div class="pnote" data-color="pink" style="--r:1deg"><p class="font-semibold">Studioshot</p><p class="body mt-1 text-sm">Complete UI/UX for a creator platform now serving 1M+ users.</p></div>
+        <div class="pnote" data-color="blue" style="--r:-1.2deg"><p class="font-semibold">Our Initiatives, SAP</p><p class="body mt-1 text-sm">MVP for an enterprise sustainability app with AI features.</p></div>
+        <div class="pnote" data-color="yellow" style="--r:0.8deg"><p class="font-semibold">NFT marketplace, Funoon Arab</p><p class="body mt-1 text-sm">Onboarding and wallet flows that supported rapid growth.</p></div>
       </div>
     </section>
 
-    <!-- Point of view as four stickies. Draft principles for Yara to edit. -->
+    <!-- Point of view: the four parts of Yara's thesis framework -->
     <section class="fj-section" data-tint="yellow" id="trust" aria-labelledby="trust-title">
       <h2 class="fj-title" id="trust-title">How I design AI people can trust</h2>
+      <p class="mb-10 max-w-[60ch] text-lg text-muted">Four principles from my master's research with 15 professionals. <a href="work/glyptik.html" class="font-medium text-ink">See the study</a></p>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="pnote principle-note min-h-[190px]" data-color="yellow" style="--r:-2deg"><h3 class="text-xl font-bold">Show why</h3><p class="body mt-2">Every AI decision comes with the reason behind it, in words the user already uses.</p></div>
-        <div class="pnote principle-note min-h-[190px]" data-color="pink" style="--r:1.5deg"><h3 class="text-xl font-bold">Keep people in charge</h3><p class="body mt-2">The AI suggests. People decide, and the interface makes that line obvious.</p></div>
-        <div class="pnote principle-note min-h-[190px]" data-color="blue" style="--r:-1deg"><h3 class="text-xl font-bold">Make undo cheap</h3><p class="body mt-2">If an agent can change something, reversing it takes one step.</p></div>
-        <div class="pnote principle-note min-h-[190px]" data-color="green" style="--r:2deg"><h3 class="text-xl font-bold">Be honest about limits</h3><p class="body mt-2">Label what the AI made, and say when it isn't sure.</p></div>
+        <div class="pnote principle-note min-h-[190px]" data-color="yellow" style="--r:-2deg"><h3 class="text-xl font-bold">Make the AI legible</h3><p class="body mt-2">Show clearly what the AI produced and how reliable it is, with labels people already understand.</p></div>
+        <div class="pnote principle-note min-h-[190px]" data-color="pink" style="--r:1.5deg"><h3 class="text-xl font-bold">Let people check it</h3><p class="body mt-2">Link every output to its evidence. Being able to verify builds more trust than a confidence score.</p></div>
+        <div class="pnote principle-note min-h-[190px]" data-color="blue" style="--r:-1deg"><h3 class="text-xl font-bold">Balance clarity and context</h3><p class="body mt-2">Use familiar symbols, and keep enough detail on screen to make a real decision.</p></div>
+        <div class="pnote principle-note min-h-[190px]" data-color="green" style="--r:2deg"><h3 class="text-xl font-bold">Put people in control</h3><p class="body mt-2">Let them choose how much detail they see, from a quick summary to the full source.</p></div>
       </div>
     </section>
 
@@ -203,7 +205,7 @@
           <a href="mailto:yarakazem@gmail.com" class="text-lg font-semibold text-[var(--sticky-ink)]">yarakazem@gmail.com</a>
           <button type="button" class="tool" id="copy-email" aria-label="Copy email address">
             <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></svg>
-            <span id="copy-label">Copy</span>
+            <span id="copy-label" aria-live="polite">Copy</span>
           </button>
         </div>
       </div>
@@ -221,17 +223,26 @@
 
   <!-- FigJam-style toolbar: add a sticky or stamp anywhere on the board -->
   <div class="fj-toolbar" role="toolbar" aria-label="Board tools">
-    <button type="button" class="fj-tool" id="tool-sticky">
-      <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H156.69A15.86,15.86,0,0,0,168,219.31L219.31,168A15.86,15.86,0,0,0,224,156.69V48A16,16,0,0,0,208,32ZM48,48H208V152H160a8,8,0,0,0-8,8v48H48ZM196.69,168,168,196.69V168Z"/></svg>
-      <span class="label">Add a sticky</span>
-    </button>
-    <button type="button" class="fj-tool" id="tool-stamp" aria-pressed="false">
-      <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32Z"/></svg>
-      <span class="label">Stamp</span>
-    </button>
+    <div class="fj-tray">
+      <div class="fj-peek" role="group" aria-label="Sticky colours">
+        <button type="button" class="fj-mini fj-mini-note" data-sticky-color="yellow" aria-label="Add a yellow sticky" style="--i:0;--x:-15px;--rot:-9deg"></button>
+        <button type="button" class="fj-mini fj-mini-note" data-sticky-color="pink" aria-label="Add a pink sticky" style="--i:1;--x:-5px;--rot:-3deg"></button>
+        <button type="button" class="fj-mini fj-mini-note" data-sticky-color="blue" aria-label="Add a blue sticky" style="--i:2;--x:5px;--rot:3deg"></button>
+        <button type="button" class="fj-mini fj-mini-note" data-sticky-color="green" aria-label="Add a green sticky" style="--i:3;--x:15px;--rot:9deg"></button>
+      </div>
+      <button type="button" class="fj-tool" id="tool-sticky" data-tip="Add a sticky"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H156.69A15.86,15.86,0,0,0,168,219.31L219.31,168A15.86,15.86,0,0,0,224,156.69V48A16,16,0,0,0,208,32ZM48,48H208V152H160a8,8,0,0,0-8,8v48H48ZM196.69,168,168,196.69V168Z"/></svg><span class="label">Sticky</span></button>
+    </div>
+    <div class="fj-tray">
+      <div class="fj-peek" role="group" aria-label="Stamps">
+        <button type="button" class="fj-mini fj-mini-stamp" data-stamp-kind="0" aria-label="Thumbs-up stamp" style="--i:0;--x:-13px;--rot:-8deg"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32Z"/></svg></button>
+        <button type="button" class="fj-mini fj-mini-stamp" data-stamp-kind="1" aria-label="Heart stamp" style="--i:1;--x:0px;--rot:0deg"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"/></svg></button>
+        <button type="button" class="fj-mini fj-mini-stamp" data-stamp-kind="2" aria-label="Star stamp" style="--i:2;--x:13px;--rot:8deg"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg></button>
+      </div>
+      <button type="button" class="fj-tool" id="tool-stamp" aria-pressed="false" data-tip="Stamp the board · Esc to stop"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32Z"/></svg><span class="label">Stamp</span></button>
+    </div>
     <span class="fj-sep" aria-hidden="true"></span>
-    <a class="fj-tool" href="#work">Work</a>
-    <a class="fj-tool" href="#trust">Principles</a>
+    <a class="fj-tool" href="#work" data-tip="Jump to work">Work</a>
+    <a class="fj-tool" href="#trust" data-tip="Jump to principles">Principles</a>
   </div>
 
   <template id="stamp-icons">

@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Glyptik: trust in AI meeting summaries, Yara Kazem</title>
+  <meta name="description" content="A research-led case study: how icons, labels and wording change whether people trust an AI meeting summary. 15 participants, three prototypes, one framework.">
+  <meta name="theme-color" content="#f1f2f4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121317" media="(prefers-color-scheme: dark)">
+  <link rel="preload" href="../assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    try { const t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
+  </script>
+</head>
+<body>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-20 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-board">Skip to content</a>
+
+  <header>
+    <a href="../index.html#work" class="fj-panel fj-panel-left no-underline text-ink" aria-label="Back to Yara Kazem's portfolio">
+      <span class="fj-logo" aria-hidden="true">YK</span>
+      <span class="font-semibold">Yara Kazem</span>
+      <span class="fj-hide-sm text-muted">/ Glyptik</span>
+    </a>
+    <nav class="fj-panel fj-panel-right" aria-label="Main">
+      <a class="nav-link fj-hide-sm text-[14px]" href="../index.html#work">Work</a>
+      <a class="nav-link fj-hide-sm text-[14px]" href="../index.html#about">About</a>
+      <button type="button" class="theme-toggle tip-below" id="theme-toggle" aria-label="Switch to dark mode" data-tip="Light or dark">
+        <svg class="icon-moon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg>
+      </button>
+      <a class="fj-share" href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="mx-auto grid max-w-[1320px] grid-cols-[minmax(0,1fr)] gap-7 px-3 pb-32 pt-[76px] md:px-5">
+
+    <!-- Overview: title, summary card and the onboarding screen -->
+    <section class="fj-section" data-tint="gray" aria-labelledby="cs-title">
+      <p class="fj-title" aria-hidden="true">Case study</p>
+      <div class="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-14">
+        <div>
+          <p class="meta">Glyptik, master's thesis research, 2024-2025</p>
+          <h1 id="cs-title" class="mt-3 text-[clamp(2.2rem,4.6vw,3.6rem)] font-bold leading-[1.05] tracking-[-0.025em]">What makes people trust an AI meeting summary?</h1>
+          <p class="mt-5 max-w-[46ch] text-lg text-muted">I designed three versions of the same AI meeting recap and watched 15 professionals decide which one to believe. The answer changed how I design AI interfaces.</p>
+        </div>
+        <figure>
+          <span class="frame-name">Glyptik / Meeting summary, redesigned</span>
+          <img src="../assets/img/glyptik/summary-plan.png" width="2200" height="1570" alt="Coded Glyptik meeting summary: a quiet Summarized by Glyptik label, key points each with a named source chip, one point flagged as unconfirmed, and tasks with owners and due dates beside the transcript." class="block h-auto w-full rounded-[14px]" fetchpriority="high">
+        </figure>
+      </div>
+
+      <dl class="pnote mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5" data-color="yellow" style="--r:-0.5deg">
+        <div class="fact"><dt>Role</dt><dd>Researcher and product designer, solo</dd></div>
+        <div class="fact"><dt>Context</dt><dd>MA thesis, Innovation Design Management, UE Potsdam</dd></div>
+        <div class="fact"><dt>Method</dt><dd>3 Figma prototypes, 15 think-aloud sessions and interviews</dd></div>
+        <div class="fact"><dt>Constraint</dt><dd>Same meeting content in every version, so only the design varied</dd></div>
+        <div class="fact"><dt>Outcome</dt><dd>10 of 15 chose the version that shows its sources. A framework and a product plan followed</dd></div>
+      </dl>
+    </section>
+
+    <!-- Problem -->
+    <section class="fj-section" data-tint="violet" aria-labelledby="problem-title">
+      <h2 class="fj-title" id="problem-title">The problem</h2>
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-14">
+        <div class="prose-cs">
+          <p class="text-[clamp(1.3rem,2.2vw,1.65rem)] font-semibold leading-snug" style="font-family: var(--display)">People use AI meeting summaries every day. Many still don't trust them, so they reread the transcript and lose the time the tool was supposed to save.</p>
+          <p class="mt-6 text-muted">Research on trust in AI mostly covers explainability and fairness. It says very little about the interface itself: which icon, label or sentence makes an AI output feel dependable. Designers fill that gap with intuition.</p>
+          <p class="text-muted">I wanted evidence. My thesis looked at semiotics, the study of signs and how people read them, and asked whether the signs in an AI interface change how much people trust it.</p>
+        </div>
+        <figure class="pnote quote-note self-start" data-color="pink" style="--r:1.5deg">
+          <blockquote>“The designer’s dilemma of how to ‘frame’ the AI as credible is still often answered through intuition rather than data.”</blockquote>
+          <figcaption>From my thesis introduction</figcaption>
+        </figure>
+      </div>
+
+      <h3 class="mt-14 text-lg font-bold">Three hypotheses</h3>
+      <div class="mt-5 grid gap-5 md:grid-cols-3">
+        <div class="pnote" data-color="blue" style="--r:-1deg"><p class="meta">H1</p><p class="mt-2 font-semibold">Visual signs like icons, symbols and colour cues raise trust.</p></div>
+        <div class="pnote" data-color="green" style="--r:1deg"><p class="meta">H2</p><p class="mt-2 font-semibold">Language, like tone, metaphor and phrasing, makes the tool easier to use.</p></div>
+        <div class="pnote" data-color="yellow" style="--r:-0.8deg"><p class="meta">H3</p><p class="mt-2 font-semibold">Visual and verbal cues together beat either one alone.</p></div>
+      </div>
+    </section>
+
+    <!-- Method -->
+    <section class="fj-section" data-tint="blue" aria-labelledby="method-title">
+      <h2 class="fj-title" id="method-title">Setting up a fair test</h2>
+      <div class="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-14">
+        <div class="prose-cs">
+          <p>I framed every session around one realistic moment: <strong>you missed a team meeting, and an AI has summarised it for you.</strong> That situation forces people to rely on the AI, so trust shows up in what they do, not just in what they say.</p>
+          <p>The first decision was what to compare. A single polished design would only tell me whether people liked it. Instead I built three versions of Glyptik's summary screen with identical content: a 30-minute product launch meeting with three decisions and two tasks. Only the signs changed, so any difference in trust came from the design.</p>
+          <p>Fifteen professionals took part, aged 22 to 35, from UX and product design, product management, software engineering and architecture. Each 30 to 45 minute remote session combined a think-aloud walkthrough of all three versions with a semi-structured interview. I coded the transcripts with thematic analysis (Braun and Clarke).</p>
+          <dl class="mt-8 grid grid-cols-3 gap-4">
+            <div class="fact"><dt>Participants</dt><dd class="text-2xl font-bold" style="font-family: var(--display)">15</dd></div>
+            <div class="fact"><dt>Versions</dt><dd class="text-2xl font-bold" style="font-family: var(--display)">3</dd></div>
+            <div class="fact"><dt>Per session</dt><dd class="text-2xl font-bold" style="font-family: var(--display)">30-45 min</dd></div>
+          </dl>
+        </div>
+        <div class="grid gap-6">
+          <figure>
+            <span class="frame-name">Glyptik / Scenario briefing</span>
+            <div class="gx">
+              <div class="gx-chrome" aria-hidden="true"><span class="gx-lights"><i></i><i></i><i></i></span><span class="gx-url">glyptik.app/welcome</span></div>
+              <div class="grid place-items-center gap-4 px-6 py-12 text-center">
+                <span class="gx-chip gx-chip-brand">Quick intro</span>
+                <p class="max-w-[22ch] text-[clamp(1.4rem,2.6vw,1.9rem)] font-bold leading-tight tracking-[-0.02em]" style="font-family: var(--display)">You missed a team meeting. Let's catch you up.</p>
+                <p class="max-w-[44ch] text-[13.5px]" style="color: var(--gx-ink-2)">An AI assistant has summarised the key discussions, decisions and tasks. Your goal is to understand what happened, using only this summary.</p>
+                <span class="mt-2 inline-flex h-10 items-center rounded-[9px] px-6 text-[13.5px] font-semibold" style="background: var(--gx-brand); color: var(--gx-brand-ink)">Get started</span>
+              </div>
+            </div>
+            <figcaption class="mt-3 text-sm text-muted">The briefing every participant read before the task.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- The three versions -->
+    <section class="fj-section" data-tint="gray" aria-labelledby="versions-title">
+      <h2 class="fj-title" id="versions-title">Three versions of the same summary</h2>
+      <p class="prose-cs mb-8 text-muted">Same meeting, same content. Switch between the versions participants saw, plus the redesign the research led to. These screens are coded, not screenshots, so you can click the sources.</p>
+      <div data-gx="c">
+        <div class="gx-tabs" role="tablist" aria-label="Summary versions">
+          <span class="gx-tab-indicator" aria-hidden="true"></span>
+          <button type="button" class="gx-tab" role="tab" data-v="a" aria-controls="gx-window">A, minimal</button>
+          <button type="button" class="gx-tab" role="tab" data-v="b" aria-controls="gx-window">B, confidence</button>
+          <button type="button" class="gx-tab" role="tab" data-v="c" aria-controls="gx-window">C, sources</button>
+          <button type="button" class="gx-tab" role="tab" data-v="plan" aria-controls="gx-window">Next, the plan</button>
+        </div>
+        <div class="mt-6 grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_260px]">
+          <div class="gx" id="gx-window" role="tabpanel" aria-label="Glyptik meeting summary"></div>
+          <aside class="pnote" data-color="yellow" style="--r:-1deg" data-gx-caption aria-live="polite"></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="fj-section" data-tint="yellow" aria-labelledby="results-title">
+      <h2 class="fj-title" id="results-title">What 15 people chose</h2>
+      <div class="grid items-start gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-14">
+        <figure>
+          <figcaption class="text-lg font-semibold">“Which version would you use?”</figcaption>
+          <div class="mt-6 grid gap-3" role="list">
+            <div class="bar-row" role="listitem"><span class="font-medium">C, sources</span><span class="bar-track" aria-hidden="true"><span class="bar-fill is-lead block" style="width:66.7%"></span></span><span class="n">10</span></div>
+            <div class="bar-row" role="listitem"><span class="font-medium">B, confidence</span><span class="bar-track" aria-hidden="true"><span class="bar-fill block" style="width:6.7%"></span></span><span class="n">1</span></div>
+            <div class="bar-row" role="listitem"><span class="font-medium">A, minimal</span><span class="bar-track" aria-hidden="true"><span class="bar-fill block" style="width:6.7%"></span></span><span class="n">1</span></div>
+            <div class="bar-row" role="listitem"><span class="font-medium">Mixed or unsure</span><span class="bar-track" aria-hidden="true"><span class="bar-fill block" style="width:20%"></span></span><span class="n">3</span></div>
+          </div>
+          <p class="mt-4 text-sm text-muted">Counted from the 15 interview transcripts. A qualitative study, so this shows a strong pattern, not a statistical result.</p>
+        </figure>
+        <div class="prose-cs">
+          <p>Version C won clearly. Participants trusted it most because they could check it, not because it told them to. 13 of 15 valued the timestamps or source links.</p>
+          <p>Four themes came out of the analysis: trust depends on transparency, people balance simplicity against detail, they want to validate claims themselves, and confidence labels confuse more than they reassure.</p>
+          <p class="text-muted">The core idea held: the signs in an interface change trust. But the most trusted signs were evidence, like timestamps, rather than decoration, like icons.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decisions -->
+    <section class="fj-section" data-tint="green" aria-labelledby="decisions-title">
+      <h2 class="fj-title" id="decisions-title">Three design calls the evidence settled</h2>
+      <div class="grid gap-16">
+        <article class="decision">
+          <div>
+            <p class="meta">Decision 1</p>
+            <h3 class="mt-2 text-[clamp(1.4rem,2.4vw,1.9rem)] font-bold leading-tight">Show sources, not scores</h3>
+            <p class="mt-3 text-muted">Link every claim to the moment it was said. A confidence score asks people to trust a number they can't inspect.</p>
+            <p class="mt-4 text-sm"><span class="meta mr-2">Rejected</span><span class="rejected">A confidence badge as the main trust signal</span></p>
+            <p class="mt-2 text-sm text-muted">13 of 15 valued timestamps or source links. The “AI Confidence: High” badge split the room: 6 found it useful, 6 were confused or put off, and 3 didn't notice it. Uncertainty belongs on specific claims, with a reason, not on the whole summary.</p>
+          </div>
+          <figure class="pnote quote-note" data-color="blue" style="--r:1deg">
+            <blockquote>“When the data is inherently connected, I don’t even need to question trust. I can just check the source.”</blockquote>
+            <figcaption>Participant P08, chose Version C</figcaption>
+          </figure>
+        </article>
+
+        <article class="decision">
+          <div>
+            <p class="meta">Decision 2</p>
+            <h3 class="mt-2 text-[clamp(1.4rem,2.4vw,1.9rem)] font-bold leading-tight">Disclose AI without sounding the alarm</h3>
+            <p class="mt-3 text-muted">Label AI content where it appears, and pair the caveat with a way to verify it.</p>
+            <p class="mt-4 text-sm"><span class="meta mr-2">Rejected</span><span class="rejected">A large “may contain errors” banner above the summary</span></p>
+            <p class="mt-2 text-sm text-muted">6 of 15 found the large disclaimer off-putting, and only 3 valued it. Even people who chose Version C wanted it toned down. Disclosure is necessary. The way it's framed decides whether it builds trust or erodes it.</p>
+          </div>
+          <figure class="pnote quote-note" data-color="pink" style="--r:-1.2deg">
+            <blockquote>“It feels like you’re saying ‘don’t trust me’ before anything else.”</blockquote>
+            <figcaption>Participant P07, on the warning banner</figcaption>
+          </figure>
+        </article>
+
+        <article class="decision">
+          <div>
+            <p class="meta">Decision 3</p>
+            <h3 class="mt-2 text-[clamp(1.4rem,2.4vw,1.9rem)] font-bold leading-tight">Layer the detail, don't remove it</h3>
+            <p class="mt-3 text-muted">Start clean and let people open the transcript and sources when they want them.</p>
+            <p class="mt-4 text-sm"><span class="meta mr-2">Rejected</span><span class="rejected">Minimalism as the default signal of credibility</span></p>
+            <p class="mt-2 text-sm text-muted">Only one participant preferred the minimal version. Most found it too thin to trust. But preferences split on density: some wanted the transcript open, others wanted it behind a toggle. The answer is user control, not one fixed level of detail.</p>
+          </div>
+          <figure class="pnote quote-note" data-color="yellow" style="--r:1.4deg">
+            <blockquote>“Visually, I like A because it’s minimal. But C makes me feel more at ease.”</blockquote>
+            <figcaption>Participant P04</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- Framework -->
+    <section class="fj-section" data-tint="violet" aria-labelledby="framework-title">
+      <h2 class="fj-title" id="framework-title">The framework</h2>
+      <p class="prose-cs text-[clamp(1.2rem,2vw,1.45rem)] font-semibold leading-snug" style="font-family: var(--display)">I turned the findings into a semiotics-based framework for designing trustworthy AI interfaces. It has four parts.</p>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="pnote min-h-[200px]" data-color="yellow" style="--r:-1.5deg"><h3 class="text-xl font-bold">Semiotic transparency</h3><p class="body mt-2">Make it obvious what the AI produced and how reliable it is, with clear, familiar labels.</p></div>
+        <div class="pnote min-h-[200px]" data-color="blue" style="--r:1.2deg"><h3 class="text-xl font-bold">Contextual validation</h3><p class="body mt-2">Link every AI output to its evidence, like a timestamp or transcript line, so people can check it.</p></div>
+        <div class="pnote min-h-[200px]" data-color="green" style="--r:-1deg"><h3 class="text-xl font-bold">Symbolic clarity and balance</h3><p class="body mt-2">Use intuitive symbols, and balance simplicity against enough context to decide.</p></div>
+        <div class="pnote min-h-[200px]" data-color="pink" style="--r:1.6deg"><h3 class="text-xl font-bold">Adaptive user control</h3><p class="body mt-2">Let people choose the level of detail: summary or full transcript, collapsed or expanded.</p></div>
+      </div>
+      <p class="prose-cs mt-10 text-muted">In the thesis I applied it to a second scenario, an AI-driven team performance dashboard, to show it holds beyond meeting summaries.</p>
+    </section>
+
+    <!-- From research to a product plan: the staff-level half of the story -->
+    <section class="fj-section" data-tint="blue" aria-labelledby="product-title">
+      <h2 class="fj-title" id="product-title">From one screen to a product plan</h2>
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-14">
+        <div class="prose-cs">
+          <p class="text-[clamp(1.25rem,2vw,1.5rem)] font-semibold leading-snug" style="font-family: var(--display)">The thesis tested a single screen. A real product has to earn trust before, during and after the summary.</p>
+          <p class="mt-5 text-muted">So I went back to all 15 transcripts and synthesised what the rest of the app needed: personas, a journey map, an information architecture, key flows and an app-wide trust layer. Every claim in the plan points to the participants it came from.</p>
+        </div>
+        <div class="pnote quote-note self-start" data-color="yellow" style="--r:-1.5deg">
+          <p class="meta">The principle</p>
+          <p class="mt-2 text-[clamp(1.6rem,3vw,2.2rem)] font-bold leading-tight" style="font-family: var(--display)">Show, don't vouch.</p>
+          <p class="body mt-2">The AI earns trust by pointing to evidence, naming what it did, and asking before it acts for other people.</p>
+        </div>
+      </div>
+
+      <h3 class="mt-14 text-lg font-bold">Three ways people catch up</h3>
+      <div class="mt-5 grid gap-5 md:grid-cols-3">
+        <div class="pnote" data-color="pink" style="--r:-1deg"><p class="meta">6 of 15</p><p class="mt-2 text-lg font-bold">Verifiers</p><p class="body mt-1 text-sm">High stakes, sceptical. Want the transcript open and every source one click away.</p></div>
+        <div class="pnote" data-color="green" style="--r:1deg"><p class="meta">4 of 15</p><p class="mt-2 text-lg font-bold">Skimmers</p><p class="body mt-1 text-sm">Time-poor, higher baseline trust. Want a short layered summary and to copy it out.</p></div>
+        <div class="pnote" data-color="blue" style="--r:-0.8deg"><p class="meta">3 to 4 of 15</p><p class="mt-2 text-lg font-bold">Coordinators</p><p class="body mt-1 text-sm">Run team work. Want owners, due dates and tasks that reach their own tools.</p></div>
+      </div>
+
+      <h3 class="mt-14 text-lg font-bold">What changed in the product</h3>
+      <div class="mt-5 fj-table">
+        <div class="role-row"><span class="meta">13 of 15</span><span class="font-medium">Sources on every AI claim, across the whole app</span><span class="text-muted">Summary, tasks, notifications</span></div>
+        <div class="role-row"><span class="meta">6 of 15</span><span class="font-medium">A quiet “Summarized by Glyptik” label replaces the top banner</span><span class="text-muted">Disclosure</span></div>
+        <div class="role-row"><span class="meta">6 / 6 / 3</span><span class="font-medium">No global confidence badge; uncertainty sits on specific claims, with a reason</span><span class="text-muted">Uncertainty</span></div>
+        <div class="role-row"><span class="meta">7 of 15</span><span class="font-medium">A Tasks hub with owners, due dates, sources and export</span><span class="text-muted">New top-level area</span></div>
+        <div class="role-row"><span class="meta">Signals</span><span class="font-medium">Shared-link preview before sign-up, and recording consent before the first recording</span><span class="text-muted">Access and consent</span></div>
+      </div>
+
+      <div class="mt-12 grid gap-6 md:grid-cols-2">
+        <div class="pnote" data-color="green" style="--r:1deg">
+          <h3 class="text-lg font-bold">An MVP that closes the trust loop</h3>
+          <p class="body mt-2">Sources and quiet disclosure, claim-level uncertainty, the Tasks hub, copy and export, a shared-link preview, Home, and minimum consent and privacy settings. Ask AI waits until it can cite a source on every answer.</p>
+        </div>
+        <div class="pnote" data-color="pink" style="--r:-1deg">
+          <h3 class="text-lg font-bold">Honest about the evidence</h3>
+          <p class="body mt-2">Every step of the journey is tagged observed, said or assumed. The organiser persona and the consent flow rest on signals only, so they come first in the research plan.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section class="fj-section" data-tint="gray" aria-labelledby="reflection-title">
+      <h2 class="fj-title" id="reflection-title">Reflection</h2>
+      <div class="grid gap-10 lg:grid-cols-2 lg:gap-14">
+        <div>
+          <h3 class="text-lg font-bold">What this study can't tell you</h3>
+          <ul class="prose-cs mt-4 grid list-disc gap-2 pl-5 text-muted">
+            <li>Fifteen English-speaking, tech-savvy professionals. Less digitally fluent users, and other languages and cultures, may read these signs differently.</li>
+            <li>It captured first impressions. Trust builds and breaks over weeks of real use.</li>
+            <li>People tested prototypes, not a live AI that makes real mistakes.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold">What I'd do next</h3>
+          <ul class="prose-cs mt-4 grid list-disc gap-2 pl-5 text-muted">
+            <li>Interview 5 to 6 meeting hosts to validate the organiser side and the consent flow, the weakest evidence in the plan.</li>
+            <li>Run a 2-week diary study with the coded prototype on real meetings, to see whether people verify less as trust is earned.</li>
+            <li>Test claim-level uncertainty against the global badge, measuring comprehension, not just preference.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 flex flex-wrap items-start gap-3">
+        <span class="comment-pin" aria-hidden="true">Y</span>
+        <p class="comment-bubble max-w-[440px]"><b>Yara</b>I'm building this plan as a coded prototype in React with Untitled UI. It already covers about 40% of the MVP screens. The interactive version will live here soon.</p>
+      </div>
+    </section>
+
+    <nav class="flex flex-wrap items-center justify-between gap-4 px-2" aria-label="Case studies">
+      <a class="btn btn-secondary" href="../index.html#work">All work</a>
+      <a class="btn btn-primary" href="../index.html#contact">Contact</a>
+    </nav>
+  </main>
+
+  <!-- FigJam-style toolbar: jump between parts of the case study -->
+  <nav class="fj-toolbar" aria-label="Case study sections">
+    <a class="fj-tool" href="../index.html#work" data-tip="Back to all work"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg><span class="label">All work</span></a>
+    <span class="fj-sep" aria-hidden="true"></span>
+    <a class="fj-tool" href="#versions-title" data-tip="Try the versions">Versions</a>
+    <a class="fj-tool" href="#results-title" data-tip="What people chose">Results</a>
+    <a class="fj-tool" href="#decisions-title" data-tip="Design decisions">Decisions</a>
+    <a class="fj-tool fj-hide-sm" href="#product-title" data-tip="The product plan">Plan</a>
+  </nav>
+
+  <script src="../script.js"></script>
+  <script src="glyptik-demo.js"></script>
+</body>
+</html>

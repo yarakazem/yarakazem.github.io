@@ -254,7 +254,7 @@
     return el?.closest(".fj-section") ?? document.querySelector(".fj-section");
   };
 
-  $("tool-sticky").addEventListener("click", () => {
+  function addSticky(color) {
     touched = true;
     finishNow();
     setStamping(false);
@@ -262,7 +262,7 @@
     const sr = section.getBoundingClientRect();
     const s = document.createElement("div");
     s.className = "note is-added";
-    s.dataset.color = colors[added++ % colors.length];
+    s.dataset.color = color || colors[added++ % colors.length];
     s.contentEditable = "true";
     s.spellcheck = false;
     s.setAttribute("role", "textbox");
@@ -284,19 +284,32 @@
     const selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
-  });
+  }
+  $("tool-sticky").addEventListener("click", () => addSticky());
+  document.querySelectorAll("[data-sticky-color]").forEach((b) =>
+    b.addEventListener("click", () => addSticky(b.dataset.stickyColor)));
 
   // Stamp mode: click anywhere in a section to drop a stamp; click a stamp to remove it
   const stampBtn = $("tool-stamp");
   const stampIcons = [...$("stamp-icons").content.querySelectorAll("svg")];
   let stamping = false;
   let stampKind = 0;
+  let cycleStamps = true; // the main button rotates stamps; picking one from the tray keeps it
   function setStamping(on) {
     stamping = on;
     stampBtn.setAttribute("aria-pressed", String(on));
     document.body.classList.toggle("is-stamping", on);
   }
-  stampBtn.addEventListener("click", () => setStamping(!stamping));
+  stampBtn.addEventListener("click", () => {
+    cycleStamps = true;
+    setStamping(!stamping);
+  });
+  document.querySelectorAll("[data-stamp-kind]").forEach((b) =>
+    b.addEventListener("click", () => {
+      stampKind = Number(b.dataset.stampKind);
+      cycleStamps = false;
+      setStamping(true);
+    }));
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && stamping) setStamping(false);
   });
@@ -315,7 +328,7 @@
     el.dataset.kind = String(stampKind);
     el.setAttribute("aria-hidden", "true");
     el.append(stampIcons[stampKind].cloneNode(true));
-    stampKind = (stampKind + 1) % stampIcons.length;
+    if (cycleStamps) stampKind = (stampKind + 1) % stampIcons.length;
     el.style.left = `${e.clientX - r.left}px`;
     el.style.top = `${e.clientY - r.top}px`;
     section.append(el);
